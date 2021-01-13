@@ -17,8 +17,21 @@ html {
 
 body {
   margin: 0;
+  font-size: 16px;
   color: var(--dark);
   font-family: 'Montserrat', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   }
+
+.text-center {
+  text-align: center;
+}
+
+.sr-only {
+  display: block;
+  color: transparent;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

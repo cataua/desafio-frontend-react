@@ -4,7 +4,7 @@ import {
 import styled from 'styled-components';
 
 const MainHeader = styled(Box)`
-  padding: 9px;
+  padding: 0px;
 `
 
 export default MainHeader;

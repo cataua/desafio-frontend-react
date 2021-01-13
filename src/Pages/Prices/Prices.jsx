@@ -1,12 +1,11 @@
 import React from 'react';
-import Header  from '../../Components/Header';
+import MainBanner from '../../Components/MainBanner';
+import './Prices.sass';
 
 const Prices = (props) => {
   return (
     <>
-      <Header>
-        <p>Children</p>
-      </Header>
+      <MainBanner />
     </>
   )
 }
