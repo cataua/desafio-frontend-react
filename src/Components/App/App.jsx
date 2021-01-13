@@ -1,10 +1,15 @@
 import React from 'react';
-import './App.css';
+import {
+  Box
+} from '@material-ui/core';
+import './App.sass';
+import Prices from '../../Pages/Prices';
 
 const App = () => {
   return (
-    <div className="App">
-    </div>
+    <Box component="main" className="App">
+      <Prices />
+    </Box>
   );
 }
 
