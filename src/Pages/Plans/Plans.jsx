@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import {
   Box,
-  Container
+  Container,
+  Grid
 } from '@material-ui/core';
 import Header  from '../../Components/Header';
 import TopBar from '../../Components/TopBar';
 import MainBanner from '../../Components/MainBanner';
+import Selectors from '../../Components/Selectors';
 import { ReactComponent as Logo } from '../../Assets/Img/hostgator-logo.svg';
 import './Plans.sass';
 import ServicePlans from '../../Services';
@@ -33,7 +35,7 @@ const Plans = (props) => {
       <Box component="main" className="App">
         <MainBanner />
         <Container>
-          <p>Planos</p>
+            <Selectors plans={hostPlans} />
         </Container>
       </Box>
     </>
