@@ -46,3 +46,6 @@ body {
 .text-underline.dashed {
   border-bottom-style: dashed;
 }
+.text-underline.warning {
+  border-bottom-color: var(--second-color);
+}
