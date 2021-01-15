@@ -35,7 +35,7 @@ const Selectors = (props) => {
       <Grid item xs={12}>
         <TitlePlans>Quero pagar a cada:</TitlePlans>
       </Grid>
-      <Grid container justify='center'>
+      <Grid container item xs={12} justify='center'>
         <GroupPlans row value={cycleSelected} onChange={handleChange}>
             { planCycle.map((cycle, i) => (
               <Plan

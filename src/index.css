@@ -36,3 +36,13 @@ body {
   height: 1px;
   overflow: hidden;
 }
+
+.text-underline {
+  border-bottom: 1px solid var(--main-color);
+}
+.text-underline.dotted {
+  border-bottom-style: dotted;
+}
+.text-underline.dashed {
+  border-bottom-style: dashed;
+}
