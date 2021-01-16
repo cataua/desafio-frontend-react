@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
   Box,
-  Container,
   Grid,
 } from '@material-ui/core';
 import Header  from '../../Components/Header';
@@ -13,7 +12,7 @@ import { ReactComponent as Logo } from '../../Assets/Img/hostgator-logo.svg';
 import './Plans.sass';
 import ServicePlans from '../../Services';
 
-const Plans = (props) => {
+const Plans = () => {
   const [hostPlans, setHostPlans] = useState([]);
   useEffect(() => {
     ServicePlans.get().then((resp) => {
@@ -35,7 +34,7 @@ const Plans = (props) => {
       </Header>
       <Box component="main" className="App">
         <MainBanner />
-        <Grid container spacing={3} justify='center'>
+        <Grid container spacing={1} justify='center' style={{maxWidth: '100%'}}>
             <Selectors plans={hostPlans} />
             <Cards plans={hostPlans} />
         </Grid>

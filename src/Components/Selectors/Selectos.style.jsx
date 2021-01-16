@@ -14,12 +14,16 @@ const TitlePlans = styled('p')`
 
 const GroupPlans = styled(RadioGroup)`
   &.MuiFormGroup-root {
-    max-width: 325px;
+    max-width: 320px;
     background: var(--white);
     border: 1px solid var(--main-color);
     border-radius: 29px;
     box-shadow: 0px 2px 4px var(--main-color);
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: nowrap;
+    & .MuiIconButton-root {
+      padding: 5px;
+    }
   }
 `
 

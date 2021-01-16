@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   Card,
-  Grid,
+  Container,
   Link,
 } from '@material-ui/core';
 
@@ -12,10 +12,19 @@ const CardPlan = styled(Card)`
   opacity: 1;
 `;
 
-const GridCardPlan = styled(Grid)`
-  &.MuiGrid-root {
+const GridCardPlan = styled(Container)`
+  &.MuiContainer-root,
+  &.MuitGrid-root {
     margin-top: 57px;
+    width: 320px;
+    @media (min-width: 768px) {
+      width: calc(100% - 30px);
+    }
+    @media (min-width: 1025px) {
+      max-width: 968px;
+    }
     & .MuiPaper-root {
+      height: calc(100% - 11px);
       &.recommended {
         border-top-width: 6px;
         border-top-color: red;
@@ -37,6 +46,24 @@ const GridCardPlan = styled(Grid)`
           border-bottom-left-radius: 4px;
           border-bottom-right-radius: 4px;
         }
+      }
+    }
+    & .swiper-container {
+      margin: 0px;
+      width: calc(100% - 26px);
+    }
+    & .swiper-container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    & .swiper-slide {
+      min-width: 266px;
+      max-width: 295px;
+      margin: 0 3px;
+    }
+    @media (min-width: 1024px) {
+      .swiper-button-disabled {
+        display: none;
       }
     }
     & .MuiGrid-item {
@@ -79,10 +106,13 @@ const CardPlanContent = styled('div')`
     font-size: 0.8124rem;
     line-height: 1.188rem;
     color: var(--dark);
+    &.fade {
+      animation: fade 3s once;
+    }
     & .plan-old-price {
       text-decoration: line-through;
       font-weight: normal;
-      margin-right: 0.2em;
+      margin-right: 0.2em;  
     }
     & .plan-new-price {
       font-weight: 800;

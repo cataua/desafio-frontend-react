@@ -3,6 +3,10 @@ import config from '../../config';
 import {
   Grid,
 } from '@material-ui/core'
+import SwiperCore, { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
 import {
   CardPlan,
   GridCardPlan,
@@ -12,7 +16,7 @@ import CardHeader from './CardHeader';
 import CardContent from './CardContent';
 import CardFooter from './CardFooter';
 
-
+SwiperCore.use([Navigation]);
 
 const Cards = (props) => {
   const discount = config.discount;
@@ -32,9 +36,21 @@ const Cards = (props) => {
   };
 
   return (
-    <GridCardPlan container item spacing={1 } xs={8} justify='center'>
+    <GridCardPlan fixed maxWidth='false'>
+      <Swiper
+        id='slide-plans'
+        navigation
+        spaceBetween={10}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}>
         { props.plans.map((plan, i) => (
-          <Grid item xs={4} key={`plan-${i}`}>
+          <SwiperSlide key={`slide-${i}`} tag='div'>
             <CardPlan variant='outlined' className={plan.name === 'Plano M' ? 'recommended' : ''}>
               <CardHeader index={i} title={plan.name} />
               <CardContent plan={plan} discount={discount} />
@@ -56,8 +72,9 @@ const Cards = (props) => {
                 </p>
               </CardFooter>
             </CardPlan>
-          </Grid>
+          </SwiperSlide>
           )) }
+        </Swiper>
       <Grid item xs={12} className="text-right mt-4 mb-4">
         <CardLink href="#" color="primary">*Confira as condições da promoção</CardLink>
       </Grid>

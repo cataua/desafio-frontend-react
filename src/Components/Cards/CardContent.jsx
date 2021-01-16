@@ -4,6 +4,7 @@ import {
   formatNumber,
   formatCurrency,
 } from '../../Helpers/Format';
+import { useStore } from '../../Helpers/Stores';
 import {
   CardPlanContent,
 } from './Cards.styled';
@@ -32,9 +33,11 @@ function formatPlanUrl(plan, cycle, promoCode) {
 }
 
 const CardContent = (props) => {
+  const [state] = useStore();
+  const { cycleSelected } = state;
   const { promoCode } = config; 
-  const cycleSelected = 'triennially';
   const [priceWithDiscount, setPriceWithDiscount] = useState(0.00);
+  const [animation, setAnimation] = useState('');
   const [priceMonthly, setPriceMonthly] = useState(0.00);
   const [originalPrice, setOriginalPrice] = useState(0.00);
   const [economy, setEconomy ] = useState(0.00);
@@ -48,12 +51,13 @@ const CardContent = (props) => {
     setPriceMonthly(CalcPricesMonthly(priceOrder, months, discount));
     setPlanUrl(formatPlanUrl(plan, cycleSelected, promoCode));
     setEconomy(originalPrice - priceWithDiscount);
-  }, [ plan, discount, promoCode, originalPrice, priceWithDiscount ]);
+    setAnimation('fade');
+  }, [ plan, discount, promoCode, originalPrice, priceWithDiscount, cycleSelected ]);
 
 
   return (
     <CardPlanContent>
-      <p className="plan-price">
+      <p className={`plan-price ${animation}`}>
         <span className="plan-old-price">{ formatCurrency(originalPrice) }</span>
         <span className="plan-new-price">
           { formatCurrency(priceWithDiscount) }

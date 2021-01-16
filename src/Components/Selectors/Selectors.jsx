@@ -8,8 +8,13 @@ import {
   GroupPlans,
   Plan
 } from './Selectos.style';
+import { useStore } from '../../Helpers/Stores';
+import { selectCycle } from '../../Reducers/SelectCycle.reducer';
 
-const Selectors = (props) => {
+
+const Selectors = () => {
+  const [state , dispatch] = useStore();
+  console.log('state ', state)
   const planCycle = [
     {
       label: '3 anos',
@@ -25,13 +30,15 @@ const Selectors = (props) => {
     },
   ]
   
-  const [cycleSelected, setCycleSeletected] = useState(planCycle[0].value);
+  const [cycleSelected, setCycleSeletected] = useState(state.cycleSelected);
   const handleChange = (e) => {
+    e.preventDefault();
     setCycleSeletected(e.target.value);
+    dispatch(selectCycle(e.target.value));
   }
 
   return (
-    <Grid container spacing={2} justify='center'>
+    <Grid container item justify='center'>
       <Grid item xs={12}>
         <TitlePlans>Quero pagar a cada:</TitlePlans>
       </Grid>
