@@ -49,3 +49,7 @@ body {
 .text-underline.warning {
   border-bottom-color: var(--second-color);
 }
+
+.text-right {
+  text-align: right;
+}

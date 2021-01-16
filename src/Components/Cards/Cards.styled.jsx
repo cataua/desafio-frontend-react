@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {
   Card,
   Grid,
+  Link,
 } from '@material-ui/core';
 
 const CardPlan = styled(Card)`
@@ -36,6 +37,14 @@ const GridCardPlan = styled(Grid)`
           border-bottom-left-radius: 4px;
           border-bottom-right-radius: 4px;
         }
+      }
+    }
+    & .MuiGrid-item {
+      &.mt-4 {
+        margin-top: 18px;
+      }
+      &.mb-4 {
+        margin-bottom: 18px;
       }
     }
   }
@@ -145,12 +154,23 @@ const CardFooterStyled = styled('footer')`
   }
 `
 
+const CardLink = styled(Link)`
+&.MuiTypography-root {
+  font-size: .75rem;
+  line-height: 0.75rem;
+  &.MuiTypography-colorPrimary {
+    color: var(--main-color);
+  }
+}
+`
+
 const CardsStyled = {
   CardPlan,
   GridCardPlan,
   CardPlanHeader,
   CardPlanContent,
   CardFooterStyled,
+  CardLink,
 };
 
 export default CardsStyled;
@@ -161,4 +181,5 @@ export {
   CardPlanHeader,
   CardPlanContent,
   CardFooterStyled,
+  CardLink,
 }

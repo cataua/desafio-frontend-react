@@ -6,6 +6,7 @@ import {
 import {
   CardPlan,
   GridCardPlan,
+  CardLink,
 } from './Cards.styled';
 import CardHeader from './CardHeader';
 import CardContent from './CardContent';
@@ -57,6 +58,9 @@ const Cards = (props) => {
             </CardPlan>
           </Grid>
           )) }
+      <Grid item xs={12} className="text-right mt-4 mb-4">
+        <CardLink href="#" color="primary">*Confira as condições da promoção</CardLink>
+      </Grid>
     </GridCardPlan>
   )
 }
