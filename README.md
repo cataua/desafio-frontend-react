@@ -9,6 +9,7 @@ To make this challenge, I adopt the follow methods, tecnhologies, libraries and 
 * ![image](https://img.shields.io/badge/React%20Scripts@4.0.1-61DBFB)
 * ![image](https://img.shields.io/badge/React%20Hooks-blue)
 * ![image](https://img.shields.io/badge/Styled%20Components@5.2.1-blue)
+* ![image](https://img.shields.io/badge/React%20Test%20Renderer@17.0.1-3c3c3c)
 * ![image](https://img.shields.io/badge/Material%20UI@4.11.2-blue)
 * ![image](https://img.shields.io/badge/SwiperJS@6.4.5-6332f6)
 * ![image](https://img.shields.io/badge/Axios@0.21.1-3c3c3c)
