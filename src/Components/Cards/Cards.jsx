@@ -36,7 +36,7 @@ const Cards = (props) => {
   };
 
   return (
-    <GridCardPlan fixed maxWidth='false'>
+    <GridCardPlan fixed maxWidth={false}>
       <Swiper
         id='slide-plans'
         navigation

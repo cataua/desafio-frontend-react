@@ -14,7 +14,6 @@ import { selectCycle } from '../../Reducers/SelectCycle.reducer';
 
 const Selectors = () => {
   const [state , dispatch] = useStore();
-  console.log('state ', state)
   const planCycle = [
     {
       label: '3 anos',
