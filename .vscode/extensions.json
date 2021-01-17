@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "orta.vscode-jest",
+    "formulahendry.auto-close-tag",
+    "coenraads.bracket-pair-colorizer-2",
+    "mikestead.dotenv",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "syler.sass-indented",
+    "glen-84.sass-lint"
+  ]
+}
